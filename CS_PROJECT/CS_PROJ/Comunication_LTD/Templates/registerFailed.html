@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Comunication_LTD
+        </title>
+    </head>
+    <body>
+        <h1 style = "color: hwb(231 0% 53% / 0.8);">
+            New user 
+        </h1>
+
+        <h1 style = "color: hwb(0 0% 0% / 0.8);">
+            Registration failed! reason: {{reasonLogin}}  
+        </h1>
+        <form method = "post" action="{% url 'register_req' %}">
+            {% csrf_token %}
+            {{ form }}
+            <input type="text" placeholder="New username" name='username' required>
+            <h6></h6>
+            <input type="text" placeholder="Email" name='email' required>
+            <h6></h6>
+            <input type="password" placeholder=" New password" name='password' required>
+            <h6></h6>
+            <input type="password" placeholder="Confirm password" name='confirmPassword' required>
+            <h4>
+                Password requirements:
+            </h4>
+            <h4>
+                • Must be 10 characters long
+            </h4>
+            <h4>
+                • Must contain a digit, an upper case letter, lower case letter and a special character
+            </h4>
+            <input type="submit" id="registerBtn" value="Register">
+            <h6></h6>
+        </form>
+    </body>
+</html>
